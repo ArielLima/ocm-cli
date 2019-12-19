@@ -22,8 +22,6 @@ builds:
     - CGO_ENABLED=0
   goarch:
     - amd64
-  ignore:
-      - goos: darwin
 archives:
   -
     name_template: "{{ .ProjectName }}-{{ .Os }}-{{ .Arch }}"
