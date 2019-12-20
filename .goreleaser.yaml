@@ -17,7 +17,7 @@
 
 project_name: ocm
 builds:
-- 
+  main: ./cmd/ocm/main.go
   env:
     - CGO_ENABLED=0
   goarch:
@@ -26,7 +26,10 @@ builds:
     - freebsd
     - windows
 archives:
-  -
+    replacemetns:
+      windows: Windows
+      linux: Linux
+      darwin: Darwin
     name_template: "{{ .ProjectName }}-{{ .Os }}-{{ .Arch }}"
 checksum:
   name_template: 'ocm-linux-amd64.sha256'
